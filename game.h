@@ -1,23 +1,17 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include<iostream>
 
-using namespace std;
-
-class game
+class Game
 {
 public:
-    game(int);
-    ~game();
-
+    Game(int maxN);
+    ~Game();
     void play();
-
 private:
     void printGameResult();
-
     int maxNumber;
-    int playerGuess;
+    int playerQuess;
     int randomNumber;
     int numOfGuesses;
 };

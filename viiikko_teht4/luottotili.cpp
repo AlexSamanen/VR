@@ -5,7 +5,7 @@ Luottotili::Luottotili(string o, double lr)
 {
     cout << "Luottotili luotu " << omistaja
          << ":lle, luottoraja " << lr << endl;
-    luottoRaja = -1 * lr; // ei välttämätön * -1, miten haluaa logiikan tehdä?
+    luottoRaja = -1 * lr;
     saldo = 0;
 }
 

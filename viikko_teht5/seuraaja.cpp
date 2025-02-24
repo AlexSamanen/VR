@@ -3,18 +3,15 @@
 Seuraaja::Seuraaja(string n)
 {
     nimi = n;
-    cout << "luodaan seuraaja "
-         << nimi
-         << endl;
+    cout << "Luodaan seuraaja " << nimi << endl;
 }
 
 void Seuraaja::paivitys(string viesti)
 {
-    cout << nimi
-         << " sai viestin "
-         << endl;
+    cout << "Seuraaja " << nimi << " sai viestin " << viesti << endl;
 }
-string Seuraaja::getNimi () const
+
+string Seuraaja::getNimi()
 {
     return nimi;
 }

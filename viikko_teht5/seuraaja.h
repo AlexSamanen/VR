@@ -1,5 +1,6 @@
 #ifndef SEURAAJA_H
 #define SEURAAJA_H
+
 #include <iostream>
 
 using namespace std;
@@ -8,10 +9,10 @@ class Seuraaja
 {
 public:
     Seuraaja(string n);
-    string getNimi() const;
     void paivitys(string viesti);
-    Seuraaja *next = nullptr;
+    string getNimi();
 
+    Seuraaja *next = nullptr;
 private:
     string nimi;
 };

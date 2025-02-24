@@ -1,41 +1,28 @@
 #include <iostream>
-
-#include "seuraaja.h"
 #include "notifikaattori.h"
 
 using namespace std;
 
 int main()
 {
-    Seuraaja *A = new Seuraaja("Aapeli");
-    Seuraaja *B = new Seuraaja("Beepeli");
-    Seuraaja *C = new Seuraaja("Ceepeli");
-   /*
-    A->next=B;
-    B->next=C;
+    Notifikaattori n;
 
-    Seuraaja *alku = A;
-    while (alku != nullptr) {
-        cout << alku->getNimi()
-             << endl;
-        alku = alku->next;
-    }
-    */
-    Notifikaattori *N = new Notifikaattori();
-    cout << endl;
+    Seuraaja a("A");
+    Seuraaja b("B");
+    Seuraaja c("C");
 
-    N->lisaa(A);
+    n.lisaa(&a);
+    n.lisaa(&b);
+    n.lisaa(&c);
+    n.tulosta();
 
-    //N->lisaa(A);
-    //N->lisaa(B);
-    //N->lisaa(C);
-    //cout << endl;
+    n.postita("Tama on viesti 1");
 
-    N->tulosta();
+    n.poista(&b);
 
-    delete A;
-    delete B;
-    delete C;
+    n.postita("Tama on viesti 2");
 
     return 0;
 }
+
+

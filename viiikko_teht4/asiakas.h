@@ -1,25 +1,28 @@
 #ifndef ASIAKAS_H
 #define ASIAKAS_H
+
 #include <iostream>
 #include "pankkitili.h"
 #include "luottotili.h"
-
-using namespace std;
 
 class Asiakas
 {
 public:
     Asiakas(string n, double lr);
-    bool talletus(double summa);
-
-    bool tilisiirto(double summa, Asiakas &saaja);
 
     string getNimi() const;
+    void showSaldo() const;
+
+    bool talletus(double amount);
+    bool nosto(double amount);
+    bool luotonMaksu(double amount);
+    bool luotonNosto(double amount);
+    bool tiliSiirto(double amount, Asiakas &saaja);
 
 private:
+    string nimi;
     Pankkitili kayttotili;
     Luottotili luottotili;
-    string nimi;
 };
 
 #endif // ASIAKAS_H

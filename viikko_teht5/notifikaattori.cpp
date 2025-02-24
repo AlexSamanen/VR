@@ -1,42 +1,52 @@
 #include "notifikaattori.h"
-#include "seuraaja.h"
 
 Notifikaattori::Notifikaattori()
 {
-
+    cout << "Luodaan notifikaattori" << endl;
 }
 
-void Notifikaattori::lisaa(Seuraaja *uusSeur)
+void Notifikaattori::lisaa(Seuraaja *s)
 {
-    adsf =  seuraajat
-    seuraajat = sadas
+    // Lisaa seuraajan listan alkuun: "tuorein ensin"
+    cout << "Notifikaattori lisaa seuraajan " << s->getNimi() << endl;
+    s->next = seuraajat;
+    seuraajat = s;
 }
 
-void Notifikaattori::poista(Seuraaja *poistSeur)
+void Notifikaattori::poista(Seuraaja *s)
 {
-    Seuraaja *alku = seuraajat;
-    while (alku != nullptr){
-        cout << "Seuraaja "
-             << alku->getNimi()
-             << endl;
-
-        alku = alku->next;
+    cout << "Notifikaattori poistaa seuraajan " << s->getNimi() << endl;
+    if (seuraajat == s) {
+        seuraajat = s->next;
+    } else {
+        Seuraaja *l = seuraajat;
+        while (l != nullptr) {
+            if (l->next == s) {
+                l->next = s->next;
+            }
+            l = l->next;
+        }
     }
 }
 
 void Notifikaattori::tulosta()
 {
-    Seuraaja *alku = seuraajat;
-    while (alku != nullptr){
-        cout << "Seuraaja "
-             << alku->getNimi()
-             << endl;
+    Seuraaja *l = seuraajat;
 
-        alku = alku->next;
+    cout << "Notifikaattorin seuraajat: " << endl;
+    while (l != nullptr) {
+        cout << "Seuraaja " << l->getNimi() << endl;
+        l = l->next;
     }
 }
 
 void Notifikaattori::postita(string viesti)
 {
+    Seuraaja *s = seuraajat;
 
+    cout << "Notifikaattori postaa viestin " << viesti << endl;
+    while (s != nullptr) {
+        s->paivitys(viesti);
+        s = s->next;
+    }
 }

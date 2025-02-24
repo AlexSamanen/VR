@@ -17,7 +17,6 @@ bool Pankkitili::withdraw(double amount)
 {
     cout << "Pankkitili: ";
 
-    // Negat. summa ei sallittu
     if (amount < 0.0) {
         cout << "nosto " << amount << " ei sallittu" << endl;
         return false;

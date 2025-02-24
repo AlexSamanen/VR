@@ -1,16 +1,16 @@
 #ifndef LUOTTOTILI_H
 #define LUOTTOTILI_H
+
+#include <iostream>
 #include "pankkitili.h"
 
-
-class Luottotili : public Pankkitili
+class Luottotili: public Pankkitili
 {
 public:
-    Luottotili();
     Luottotili(string o, double lr);
 
-    virtual bool withdraw (double summa) override;
-    virtual bool deposit(double summa) override;
+    virtual bool deposit(double amount) override;
+    virtual bool withdraw(double amount) override;
 
 protected:
     double luottoRaja = 0;

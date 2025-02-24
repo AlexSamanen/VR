@@ -5,19 +5,14 @@
 using namespace std;
 
 int main()
-{/*
-    Chef c_olio("Gordon");
+{
+    Chef c("Gordon");
+    c.makeSalad(11);
+    c.makeSoup(14);
 
-    int annoksia = c_olio.makeSalad(11);
-    cout << "Annoksia tehtiin"
-         << annoksia
-         << endl;
-    */
-    ItalianChef i_olio("Mario");
+    cout << endl;
 
-    bool salasanaOk = i_olio.askSecret("vaara",1, 1);
-    cout << "oliko salasana ok"
-         << salasanaOk
-         << endl;
-    return 0;
+    ItalianChef ic("Mario");
+    ic.makeSalad(9);
+    ic.askSecret("pizza",12,12);
 }

@@ -7,7 +7,6 @@ Notifikaattori::Notifikaattori()
 
 void Notifikaattori::lisaa(Seuraaja *s)
 {
-    // Lisaa seuraajan listan alkuun: "tuorein ensin"
     cout << "Notifikaattori lisaa seuraajan " << s->getNimi() << endl;
     s->next = seuraajat;
     seuraajat = s;

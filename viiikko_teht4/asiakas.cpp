@@ -19,7 +19,6 @@ void Asiakas::showSaldo() const
 }
 
 bool Asiakas::luotonMaksu(double amount) {
-    // Negat. summa ei sallittu
     if (amount < 0.0) {
         cout << "Luoton maksu" << amount << " ei sallittu" << endl;
         return false;
@@ -30,7 +29,6 @@ bool Asiakas::luotonMaksu(double amount) {
 }
 
 bool Asiakas::luotonNosto(double amount) {
-    // Negat. summa ei sallittu
     if (amount < 0.0) {
         cout << "Luoton nosto " << amount << " ei sallittu" << endl;
         return false;
@@ -53,7 +51,6 @@ bool Asiakas::tiliSiirto(double amount, Asiakas &saaja)
 
 bool Asiakas::nosto(double amount)
 {
-    // Negat. summa ei sallittu
     if (amount < 0.0) {
         cout << "Nosto " << amount << " ei sallittu" << endl;
         return false;
